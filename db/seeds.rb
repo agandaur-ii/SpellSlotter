@@ -6,16 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# Player.delete_all
-# Player.reset_pk_sequence
-# Party.delete_all
-# Party.reset_pk_sequence
-# Characterspell.delete_all
-# Characterspell.reset_pk_sequence
-# Character.delete_all
-# Character.reset_pk_sequence
-# Spell.delete_all
-# Spell.reset_pk_sequence
+Player.delete_all
+Player.reset_pk_sequence
+Party.delete_all
+Party.reset_pk_sequence
+Characterspell.delete_all
+Characterspell.reset_pk_sequence
+Character.delete_all
+Character.reset_pk_sequence
+Spell.delete_all
+Spell.reset_pk_sequence
 
 chris = Player.create(name: "Chris")
 elaine = Player.create(name: "Elaine")
