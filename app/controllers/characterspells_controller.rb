@@ -1,0 +1,2 @@
+class CharacterspellsController < ApplicationController
+end
