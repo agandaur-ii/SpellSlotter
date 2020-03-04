@@ -10,7 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_03_000534) do
+ActiveRecord::Schema.define(version: 2020_03_04_050652) do
+
+  create_table "alignments", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "backgrounds", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "characterclasses", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "characterclassjoins", force: :cascade do |t|
+    t.integer "characterclass_id"
+    t.integer "character_id"
+  end
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
@@ -21,6 +46,9 @@ ActiveRecord::Schema.define(version: 2020_03_03_000534) do
     t.string "description"
     t.integer "player_id"
     t.integer "party_id"
+    t.integer "alignment_id"
+    t.integer "background_id"
+    t.integer "race_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -41,6 +69,13 @@ ActiveRecord::Schema.define(version: 2020_03_03_000534) do
 
   create_table "players", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "races", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

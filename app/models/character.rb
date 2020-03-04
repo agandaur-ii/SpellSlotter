@@ -4,6 +4,13 @@ class Character < ApplicationRecord
     has_many :characterspells
     has_many :spells, through: :characterspells
 
+    
+    belongs_to :race
+    belongs_to :background
+    belongs_to :alignment
+    has_many :characterclassjoins
+    has_many :characterclasses, through: :characterclassjoins
+
     def races 
       [
         "Dragonborn",

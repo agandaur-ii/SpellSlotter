@@ -9,6 +9,9 @@ class CreateCharacters < ActiveRecord::Migration[6.0]
       t.string :description
       t.integer :player_id
       t.integer :party_id
+      t.integer :alignment_id
+      t.integer :background_id
+      t.integer :race_id
 
       t.timestamps
     end
