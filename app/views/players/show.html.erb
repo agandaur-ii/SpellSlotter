@@ -1,0 +1,8 @@
+<h2>Player Name: <%= @player.name %></h2>
+
+<h3>Characters</h3>
+<% @player.characters.each do |char|%>
+    <li><%= link_to char.name, char %>: <%=char.characterclasses.first.name %></li>
+<% end %>
+
+<% #Create Link to Make New Character %>

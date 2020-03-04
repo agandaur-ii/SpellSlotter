@@ -8,7 +8,7 @@ class CharactersController < ApplicationController
     end 
 
     def show 
-
+        @character = Character.find(params[:id])
     end
 
     def index 
@@ -24,6 +24,12 @@ class CharactersController < ApplicationController
     end
 
     def destroy
+        
+    end
+
+    private
+
+    def char_params
         
     end
 end

@@ -26,4 +26,10 @@ class PartiesController < ApplicationController
     def destroy
         
     end
+
+    private
+
+    def party_params
+        
+    end
 end

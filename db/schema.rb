@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_04_050652) do
+ActiveRecord::Schema.define(version: 2020_03_04_181055) do
 
   create_table "alignments", force: :cascade do |t|
     t.string "name"
@@ -54,6 +54,11 @@ ActiveRecord::Schema.define(version: 2020_03_04_050652) do
     t.integer "spell_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "classspells", force: :cascade do |t|
+    t.integer "characterclass_id"
+    t.integer "spell_id"
   end
 
   create_table "parties", force: :cascade do |t|

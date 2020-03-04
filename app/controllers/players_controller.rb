@@ -8,7 +8,7 @@ class PlayersController < ApplicationController
     end
 
     def show 
-
+        @player = Player.find(params[:id])
     end
 
     def index 
@@ -25,5 +25,11 @@ class PlayersController < ApplicationController
 
     def destroy
         
+    end
+
+    private
+
+    def player_params
+
     end
 end
