@@ -40,7 +40,6 @@ ActiveRecord::Schema.define(version: 2020_03_04_050652) do
   create_table "characters", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.string "characterclass"
     t.integer "player_id"
     t.integer "party_id"
     t.integer "alignment_id"

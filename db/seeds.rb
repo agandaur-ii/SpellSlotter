@@ -16,6 +16,16 @@ Character.delete_all
 Character.reset_pk_sequence
 Spell.delete_all
 Spell.reset_pk_sequence
+Alignment.delete_all
+Alignment.reset_pk_sequence
+Background.delete_all
+Background.reset_pk_sequence
+Race.delete_all
+Race.reset_pk_sequence
+Characterclassjoin.delete_all
+Characterclassjoin.reset_pk_sequence
+Characterclass.delete_all
+Characterclass.reset_pk_sequence
 
 chris = Player.create(name: "Chris")
 elaine = Player.create(name: "Elaine")
@@ -101,99 +111,99 @@ le = Alignment.create(name: "Lawful Evil")
 ne = Alignment.create(name: "Neutral Evil")
 ce = Alignment.create(name: "Chaotic Evil")
 
-Character.create(name: "Ectheleon",
-   race: "Wood Elf",
-   class_of_c: "Ranger",
-   background: "Outlander",
-   alignment: "CN",
+ecth = Character.create(
+   name: "Ectheleon",
    description: "A ranger on a quest to find his lost sister. He is also a servant of Kelemvor.",
-   player_id: chris.id, party_id: dof.id
+   player_id: chris.id, 
+   party_id: dof.id,
+   alignment_id: cn.id,
+   background_id: outlander.id,
+   race_id: elf.id
 )
 
-Character.create(
+Characterclassjoin.create(characterclass_id: ranger.id, character_id: ecth.id)
+
+lav = Character.create(
     name: "Lavinia",
-    race: "Halfling",
-    class_of_c: "Druid", 
-    background: "Folk Hero", 
-    alignment: "LG", 
     description: "Oringinally from the swamp, she is on a quest to ride her homeland of a terrible blight.", 
     player_id: elaine.id, 
-    party_id: dof.id
+    party_id: dof.id,
+    alignment_id: lg.id,
+    background_id: folk_hero.id, 
+    race_id: halfling.id
 )
 
-Character.create(
+Characterclassjoin.create(characterclass_id: druid.id, character_id: lav.id)
+
+dam = Character.create(
     name: "Damakos",
-    race: "Teifling",
-    class_of_c: "Wizard", 
-    background: "Hermit", 
-    alignment: "CN", 
     description: "Estranged from his family, he is looking to find a new home based on a deed in his possesion at an unknown destination.", 
     player_id: adam.id, 
-    party_id: dof.id
+    party_id: dof.id,
+    alignment_id: cn.id,
+    background_id: hermit.id,
+    race_id: tiefling.id
 )
 
-# Character.create(
-#     name: "Shump",
-#     race: "Half-orc",
-#     class_of_c: "Fighter", 
-#     background: "Gladiator", 
-#     alignment: "CG", 
-#     description: "He finds himself the new owner of a flying castle, with an army of halfling servants to corral...", 
-#     player_id: dan.id
-# )
+Characterclassjoin.create(characterclass_id: wizard.id, character_id: dam.id)
 
-Character.create(
+emy = Character.create(
     name: "Emyrs",
-    race: "Half-elf",
-    class_of_c: "Bard", 
-    background: "Entertainer", 
-    alignment: "CG", 
     description: "The classic bard... Won his lute in a battle of the bands against the yetis, though. You should ask him about it.", 
     player_id: josh.id, 
-    party_id: dof.id
+    party_id: dof.id,
+    alignment_id: cg.id,
+    background_id: entertainer.id, 
+    race_id: half_elf.id
 )
 
-Character.create(
+Characterclassjoin.create(characterclass_id: bard.id, character_id: emy.id)
+
+kri = Character.create(
     name: "Kriv",
-    race: "Dragonborn",
-    class_of_c: "Sorcerer", 
-    background: "Sage", 
-    alignment: "CN", 
-    description: "Deadpool, but for D&D", 
+    description: "Deadpool, but for D&D",
     player_id: nick.id, 
-    party_id: dof.id
+    party_id: dof.id,
+    alignment_id: cn.id, 
+    background_id: sage.id,
+    race_id: dragonborn.id
 )
 
-Character.create(
+Characterclassjoin.create(characterclass_id: sorcerer.id, character_id: kri.id)
+
+rod = Character.create(
     name: "Rodrigo de Paridan",
-    race: "Half-elf",
-    class_of_c: "Warlock", 
-    background: "Archaeologist", 
-    alignment: "CN", 
     description: "Searches the world for valuable artifacts in hopes of making a fortune.", 
     player_id: jack.id, 
-    party_id: tti.id
+    party_id: tti.id,
+    alignment_id: cn.id, 
+    background_id: archaeologist.id, 
+    race_id: half_elf.id
 )
 
-Character.create(
+Characterclassjoin.create(characterclass_id: warlock.id, character_id: rod.id)
+
+coo = Character.create(
     name: "Cookie",
-    race: "Dwarf",
-    class_of_c: "Rogue", 
-    background: "Urchin", 
-    alignment: "CG", 
     description: "She comes from unknown origins, but loves to sail the open seas and collect trinkets along the way.", 
     player_id: emma.id, 
-    party_id: tti.id
+    party_id: tti.id,
+    alignment_id: cg.id, 
+    background_id: urchin.id,
+    race_id: dwarf.id
 )
 
-Character.create(
+Characterclassjoin.create(characterclass_id: rogue.id, character_id: coo.id)
+
+mak = Character.create(
     name: "Maka",
-    race: "Human",
-    class_of_c: "Barbarian", 
-    background: "Noble", 
-    alignment: "LG", 
     description: "A seemingly small woman that wields a giant axe and is always follwed around by her cat, Tonkatsu", 
     player_id: katie.id, 
-    party_id: tti.id
+    party_id: tti.id,
+    alignment_id: lg.id,
+    background_id: noble.id, 
+    race_id: human.id
 )
+
+Characterclassjoin.create(characterclass_id: barbarian.id, character_id: mak.id)
 
