@@ -1,0 +1,8 @@
+Choose Your Spells<br>
+<br>
+<%= form_for @charspells do |f| %>
+<%= f.hidden_field :char_id, :value => @char.id  %>
+<%= f.collection_check_boxes :spell_id, @spells.all, :id, :name %><br>
+<br>
+<%= f.submit "Submit" %>
+<% end %>

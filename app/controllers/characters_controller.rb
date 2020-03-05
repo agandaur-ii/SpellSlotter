@@ -27,6 +27,12 @@ class CharactersController < ApplicationController
         
     end
 
+    def spell_select #new
+        @char = Character.all.find(params[:char_id])
+        @charspells = Characterspell.new
+        @spells = @char.characterclasses.first.spells
+    end
+
     private
 
     def char_params

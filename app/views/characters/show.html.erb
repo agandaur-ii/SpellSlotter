@@ -1,6 +1,15 @@
-<h2><%= @character.name %></h2><br>
+<h2><%= @character.name %></h2>
+<h3>Party: <%= link_to @character.party.name, @character.party %></h3><br>
 <h3>Race: <%= @character.race.name %></h3>
 <h3>Class: <%= @character.characterclasses.first.name %></h3>
 <h3>Background: <%= @character.background.name %></h3>
 <h3>Alignment: <%= @character.alignment.name%></h3>
-<h3><%= link_to "Spells" %></h3>
+<% if @character.characterclasses.first.spells.length > 0 %>
+    <h3>Spells</h3>
+    <% @character.spells.each do |spell| %>
+        <li><%= link_to spell.name, spell %></li>
+    <% end %>
+    <%= button_to "Edit", '/characters/edit/spells', method: :get, params: {char_id: @character.id} %>
+<% end %>
+
+<% #button_to "Edit", edit_characterspell_path(@character.id), method: :get, params: {char_id: @character.id} %>
