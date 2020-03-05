@@ -1,0 +1,11 @@
+<h1><%= @party.name %></h1>
+<h2>Dungeon Master: <%= @dm.name %>
+<h2>Characters:</h2> 
+<% @party.characters.each do |char| %>
+    <li><%= char.name %>: <%= char.characterclasses.first.name %></li>
+<% end %>
+
+<% #Only available to DM %>
+<%= button_to "Edit Party Name", edit_party_path(@party), :method => :get %>
+<%= button_to "Edit Party Members", "/party/members/edit/", :method => :get, params: {party_id: @party.id} %>
+<%= button_to "Delete Party", @party, method: "delete", data: { confirm: 'Are you sure?' } %>

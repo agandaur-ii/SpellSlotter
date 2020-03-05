@@ -6,3 +6,6 @@
 <% end %>
 
 <% #Create Link to Make New Character %>
+
+<%= button_to "Edit Profile", edit_player_path(@player), :method => :get %>
+<%= button_to "Delete Profile", @player, method: "delete", data: { confirm: 'Are you sure?' } %>
