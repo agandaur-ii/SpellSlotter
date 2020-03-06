@@ -1,6 +1,6 @@
 class Character < ApplicationRecord
     belongs_to :player
-    belongs_to :party
+    belongs_to :party, optional: true
     has_many :characterspells
     has_many :spells, through: :characterspells
 

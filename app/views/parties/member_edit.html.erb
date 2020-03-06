@@ -1,0 +1,7 @@
+<h2>Add Party Members</h2>
+
+<%= form_with url: members_update_path, method: "get" do |f|%>
+    <%= f.hidden_field :party_id, :value => @party.id  %>
+    <%= f.collection_check_boxes :char_id, @free_members, :id, :name %><br>
+    <%= f.submit %>
+<% end %>

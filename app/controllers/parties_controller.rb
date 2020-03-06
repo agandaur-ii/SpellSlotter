@@ -13,7 +13,7 @@ class PartiesController < ApplicationController
         end
     end
 
-    def show 
+    def show
         @party = Party.find(params[:id])
         @dm = Player.find(@party.dm_id)
     end
@@ -43,8 +43,27 @@ class PartiesController < ApplicationController
         redirect_to new_party_path
     end
 
-    def member_edit
-        byebug
+    def member_edit #add member form
+        @party = Party.find(params[:party_id])
+        current_members = @party.characters
+        @free_members = Character.all - current_members
+    end
+
+    def member_update #add member action
+        @party = Party.find(params[:party_id])
+        params[:char_id].shift
+        chars_ids = params[:char_id]
+        chars_ids.each do |c|
+            Character.find(c.to_i).update(party_id: @party.id)
+        end
+        redirect_to @party
+    end
+
+    def remove_members
+        @party = Party.find(params[:party_id])
+        char = Character.find(params[:char_id])
+        char.update(party_id: nil)
+        redirect_to @party
     end
 
     private

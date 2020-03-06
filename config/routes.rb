@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get '/characters/edit/spells', to: 'characters#spell_select'
-  get '/party/members/edit', to: 'parties#member_edit'
+  get '/members/edit', to: 'parties#member_edit'
+  get '/members/update', to: 'parties#member_update'
+  delete "/members/remove", to: 'parties#remove_members'
   resources :backgrounds
   resources :characterclasses
   resources :characterspells , only: [:create]
