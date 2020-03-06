@@ -5,9 +5,7 @@ class CharactersController < ApplicationController
     end
 
     def create 
-        
         @character = Character.create(char_params)
-        byebug
         if @character.valid?
             @player = Player.find(params[:player_id])
             redirect_to @player
@@ -41,7 +39,6 @@ class CharactersController < ApplicationController
     end
 
     def destroy
-        byebug
         @character = Character.find(params[:id])
         @player = Player.find(params[:player_id])
         @character.destroy
