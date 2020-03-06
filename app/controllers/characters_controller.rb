@@ -26,11 +26,12 @@ class CharactersController < ApplicationController
 
     def edit 
         @character = Character.find(params[:id])
+        @player = @character.player
     end
 
     def update 
         @character = Character.find(params[:id])
-        if @character.update(character_params)
+        if @character.update(char_params)
             redirect_to @character
         else
             flash.now[:notice] = @character.errors.full_messages

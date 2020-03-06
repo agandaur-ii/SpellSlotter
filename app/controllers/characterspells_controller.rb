@@ -9,6 +9,6 @@ class CharacterspellsController < ApplicationController
         spells.each do |s_id|
             Characterspell.create(character_id: char, spell_id: s_id)
         end
-        redirect_to character_path(@c)
+        redirect_to @c
     end
 end
