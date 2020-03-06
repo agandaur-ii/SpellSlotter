@@ -1,0 +1,18 @@
+ <% if flash[:notice] %>
+    <% flash[:notice].each do |notice| %>
+        <%=notice%>
+    <%end%>
+<%end%>
+
+<%= form_with model: @character do |f| %>
+Name: <%= f.text_field :name %><br>
+Description:<br>
+<%= f.text_area :description %><br>
+Race: <%= f.collection_select :race_id, Race.all, :id, :name %><br>
+Class: <%= f.collection_select :characterclass_ids, Characterclass.all, :id, :name %><br>
+Background: <%= f.collection_select :background_id, Background.all, :id, :name %><br>
+Alignment: <%= f.collection_select :alignment_id, Alignment.all, :id, :name %><br>
+<%= f.hidden_field :player_id, :value => @player.id  %>
+<br>
+<%= f.submit %>
+<% end %>

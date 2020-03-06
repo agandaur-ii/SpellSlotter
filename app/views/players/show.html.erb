@@ -5,7 +5,7 @@
     <li><%= link_to char.name, char %>: <%=char.characterclasses.first.name %></li>
 <% end %>
 
-<% #Create Link to Make New Character %>
+<%= button_to "Create New Character", new_character_path, :method => :get, params: {player_id: @player.id} %>
 
 <%= button_to "Edit Profile", edit_player_path(@player), :method => :get %>
 <%= button_to "Delete Profile", @player, method: "delete", data: { confirm: 'Are you sure?' } %>
