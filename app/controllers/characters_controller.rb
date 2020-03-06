@@ -7,7 +7,7 @@ class CharactersController < ApplicationController
     def create 
         @character = Character.create(char_params)
         if @character.valid?
-            @player = Player.find(params[:player_id])
+            @player = Player.find(params[:character][:player_id])
             redirect_to @player
         else
             flash.now[:notice] = @character.errors.full_messages
