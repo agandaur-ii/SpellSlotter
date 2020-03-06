@@ -10,6 +10,18 @@
   </head>
 
   <body>
-    <%= yield %>
+
+  <header class='navbar'>
+      <div class="title">
+        <h2>Spellslotter</h2>
+      </div>
+      <div class="options">
+          <%= link_to "Races", races_path %> <%= link_to "Classes", characterclasses_path %> <%= link_to "Backgrounds", backgrounds_path %> <%= link_to "Spells", spells_path %>
+      </div>
+  </header>
+
+    <div class='content'>
+      <%= yield %>
+    </div>
   </body>
 </html>
