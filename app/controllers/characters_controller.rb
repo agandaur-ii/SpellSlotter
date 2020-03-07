@@ -50,7 +50,7 @@ class CharactersController < ApplicationController
         @char = Character.all.find(params[:char_id])
         @charspells = Characterspell.new
         @spells = @char.characterclasses.first.spells
-    end
+    end 
 
     private
 

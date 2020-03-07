@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Player.delete_all
+Player.delete_all 
 Player.reset_pk_sequence
 Party.delete_all
 Party.reset_pk_sequence

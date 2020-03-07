@@ -11,4 +11,4 @@ Rails.application.routes.draw do
   resources :characters
   resources :parties
   resources :players
-end
+end 

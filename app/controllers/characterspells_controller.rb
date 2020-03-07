@@ -10,5 +10,5 @@ class CharacterspellsController < ApplicationController
             Characterspell.create(character_id: char, spell_id: s_id)
         end
         redirect_to @c
-    end
+    end 
 end
