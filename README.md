@@ -19,9 +19,11 @@
 * Veiw a list of available races, classes, backgrounds, and spells from the navbar at anytime
 
 ### Screenshots
-![](images/)
+![](images/character_creation.png)
 
-![](images/)
+![](images/edit_spells.png)
+
+![](images/character_show_page.png)
 
 #### Credits
 Dungeons & Dragons, and all affiliated information, is owned and trademarked by of Wizards of the Coast.
